@@ -3,7 +3,17 @@ const flock = [];
 function setup() {
   // put setup code here
   // createCanvas(windowWidth,windowHeight);
-  createCanvas(500, 500);
+  let defaultWidth = 500;
+  let defaultHeight = 500;
+
+  if (defaultWidth > windowWidth) {
+    defaultWidth = windowWidth;
+  }
+  if (defaultHeight > windowHeight) {
+    defaultHeight = windowHeight;
+  }
+  createCanvas(defaultWidth, defaultHeight);
+  
   let numBoids = 100;
   for (let i = 0; i < numBoids; i++){
     flock.push(new boid);
